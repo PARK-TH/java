@@ -26,8 +26,12 @@ public class Account{
   }
 
   public void deposit(int deposit){
-    Balance -= deposit;
-    System.out.println(AccNo +" 계좌에 "+ deposit + "만원이 입금되었습니다.");
+    if(getBalance()-deposit<0){
+      System.out.println("0원 밑으로는 출금할 수 없습니다.");
+    } else{
+      Balance -= deposit;
+      System.out.println(AccNo +" 계좌에 "+ deposit + "만원이 출금되었습니다.");
+    }
 
   }
 
